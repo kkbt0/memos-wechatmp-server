@@ -1,0 +1,22 @@
+host = "0.0.0.0:8080"
+
+
+users = [
+    { openid = "xxx", memos_open_api = "https://demo.usememos.com/api/v1/memo?openId=B0A20B12622CD78F448856BD67F1EF7A" },
+    { openid = "kkbt", memos_open_api = "http://192.168.0.107:5230/api/memo?openId=xxxxxxxxxxx" },
+]
+
+wechat_r_unkown_user = "陌生人: ${openid}"
+wechat_r_default = "📩 已保存"
+wechat_r_text = "📩 已保存文字"
+wechat_r_image = "📩 已保存图片"
+wechat_r_voice = "📩 已保存语音"
+wechat_r_location = "📩 已保存位置"
+wechat_r_link = "📩 已保存链接"
+wechat_r_video ="不支持视频消息"
+wechat_r_unknown = "未知类型消息"
+
+[wechat]
+token = "wechat_token"
+appid = "wechat_appid"
+secret = "wechat_secret"

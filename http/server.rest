@@ -1,0 +1,10 @@
+#### FOR Vscode Restful Client
+@host=http://localhost:8080
+###
+GET {{host}}/
+
+###
+POST https://demo.usememos.com/api/v1/memo?openId=B0A20B12622CD78F448856BD67F1EF7A 
+Content-Type: application/json
+
+{"content":"Hello"}
