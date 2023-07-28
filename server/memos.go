@@ -69,7 +69,7 @@ type ResponseResourceData struct {
 }
 
 func CreateResourceByLink(url string, externalLink string) (int, error) {
-	url = strings.ReplaceAll(url, "api/memo", "api/resource")
+	url = strings.ReplaceAll(url, "memo?", "resource?")
 	data := RequestResourceData{
 		Filename:        "",
 		ExternalLink:    externalLink,

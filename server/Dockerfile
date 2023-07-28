@@ -6,7 +6,7 @@ ENV GOPROXY=https://goproxy.cn,direct
 WORKDIR /home/workspace
 COPY . .
 RUN go build -o server  -ldflags '-linkmode "external" -extldflags "-static"' . && strip -s server
-RUN mkdir app && cp server app/ && cp config.toml app/ 
+RUN mkdir app && cp server app/ 
 
 FROM alpine:latest
 LABEL maintainer="恐咖兵糖<0@ftls.xyz>"
@@ -18,6 +18,6 @@ WORKDIR /app
 COPY --from=builder /home/workspace/app/ .
 # RUN pwd && ls
 VOLUME /app/data
-EXPOSE 8900
+EXPOSE 8905
 
 ENTRYPOINT ["/app/server"]

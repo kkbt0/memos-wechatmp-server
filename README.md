@@ -1,14 +1,11 @@
-# Memos-Wechat-Server
+# Memos-WechatMP-Server
 
 For memos 
 
 ！！！未发布，待测试！！！
 
-配置文件，可使用变量
 
-eg: `wechat_r_unkown_user = "陌生人: ${openid} ${some}"`
-
-eg: `wechat_r_default = "📩 已保存 ${content} ${visibility}"`
+## 微信测试号
 
 微信测试号 URL 路径: `/wechatmp`
 
@@ -18,8 +15,28 @@ eg: `wechat_r_default = "📩 已保存 ${content} ${visibility}"`
 
 Docker kkbt/memos-wechatmp-server 待测试
 
+```bash
+docker run -p 8905:8905 -v /app/memos-wechatmp-server/data/:/app/data/ kkbt/memos-wechatmp-server:latest
+```
+
+## 配置
+
+配置文件，可使用变量
+
+eg: `wechat_r_unkown_user = "陌生人: ${openid} ${some}"`
+
+eg: `wechat_r_default = "📩 已保存 ${content} ${visibility}"`
+
+使用举例：`wechat_r_default = "📩 已保存 ${front_end_url}"` ，然后配置变量  front_end_url 为 Memos 前端链接。
+
+## 使用
+
+可发送图片，语音，文字，链接等。语音，文字发送 以 公开发布 开头，则为公开发布语音或文字。
+
+## 配置示例
+
 ```toml
-host = "0.0.0.0:8080"
+host = "0.0.0.0:8905"
 
 
 users = [

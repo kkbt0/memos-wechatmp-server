@@ -71,6 +71,7 @@ func WeChatMpHandlers(c *gin.Context) {
 	}
 	// 替换变量
 	r_str = ReplaceVariables(WeChatMp.Request.FromUserName, r_str)
+	r_str = strings.ReplaceAll(r_str, "${openid}", WeChatMp.Request.FromUserName)
 	r_str = strings.ReplaceAll(r_str, "${content}", content)
 	r_str = strings.ReplaceAll(r_str, "${visibility}", visibility)
 	WeChatMp.ReplyTextMsg(c.Writer, r_str)
