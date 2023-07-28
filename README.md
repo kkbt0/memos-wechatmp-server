@@ -1,22 +1,20 @@
 # Memos-WechatMP-Server
 
-For memos 
-
-！！！未发布，待测试！！！
-
+用于转发微信测试号/公众号消息到 memos 
+For memos https://github.com/usememos/memos 
 
 ## 微信测试号
 
 微信测试号 URL 路径: `/wechatmp`
 
-关注后获取 openid , 配置文件 memos_open_api 填写对应 memos openapi url.
+关注后获取 openid , 配置文件 memos_open_api 填写对应 memos openapi url. token ，appid 等等从微信测试号管理页面获设置和获取。
 
 可以云函数部署，教程暂时参考 https://www.ftls.xyz/posts/obcsapi-fc-simple/ 云函数部分
 
-Docker kkbt/memos-wechatmp-server 待测试
+Docker kkbt/memos-wechatmp-server 完成测试 最新版本 v202307281434
 
 ```bash
-docker run -p 8905:8905 -v /app/memos-wechatmp-server/data/:/app/data/ kkbt/memos-wechatmp-server:latest
+docker run -p 8905:8905 -v /app/memos-wechatmp-server/data/:/app/data/ kkbt/memos-wechatmp-server:v202307281434
 ```
 
 ## 配置
