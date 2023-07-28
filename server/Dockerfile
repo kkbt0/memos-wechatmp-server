@@ -3,7 +3,13 @@ LABEL maintainer="恐咖兵糖<0@ftls.xyz>"
 
 ENV GO111MODULE=on 
 ENV GOPROXY=https://goproxy.cn,direct
+
 WORKDIR /home/workspace
+
+COPY go.mod go.mod
+COPY go.sum go.sum
+RUN go mod download
+
 COPY . .
 RUN go build -o server  -ldflags '-linkmode "external" -extldflags "-static"' . && strip -s server
 RUN mkdir app && cp server app/ 
