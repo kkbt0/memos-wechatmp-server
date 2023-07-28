@@ -41,7 +41,7 @@ func WeChatMpHandlers(c *gin.Context) {
 		r_str = viper.GetString("wechat_r_image")
 		var id int
 		id, err = CreateResourceByLink(openAPIUrl, WeChatMp.Request.PicUrl)
-		if err != nil {
+		if err == nil {
 			err = CreateMemo(openAPIUrl, "", visibility, []int{id})
 		}
 	case weixinmp.MsgTypeVoice: // 语言消息
